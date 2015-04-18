@@ -27,6 +27,24 @@
         </script>
         <p>Here are the last few songs that you have listened to and/or added to your playlist:</p>
         <p>(insert data from Spotify API)</p>
+        <div id="search" class="hero-unit">
+           <div class="container">
+              <div id="intro">
+                <h1> My Saved Tracks</h1>
+                <p class="lead">This app demonstrates how to get the saved tracks for a user</p>
+                <div id="search-form" class="form-inline">
+                    <span class="xform-control">
+                        <button class="btn btn-info btn-large" id='go' type="button">Show My Saved Tracks</button>
+                    </span>
+                </div>
+                <div id="info"> </div>
+               </div>
+            </div>
+        </div>
+        <div id="main" class="container">
+            <h1> Saved Tracks for <span id="who"> </span></h1>
+            <div id="item-list"> </div>
+        </div>
         <script>
         // Spotify API JS starter stuff
             "use strict";
