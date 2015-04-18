@@ -6,5 +6,24 @@
     <body>
         <h1>Hello World</h1>
         <p>Welcome to HackYSU! Here we are going to recommend you some music and help you recommend music to your friends</p>
+        <p>First, let's determine your current location!</p>
+        <button onclick="getLocation()">Try It</button>
+        <p id="demo"></p>
+        <script>
+            var x = document.getElementById("demo");
+
+            function getLocation() {
+                if (navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(showPosition);
+                } else { 
+                    x.innerHTML = "Geolocation is not supported by this browser.";
+                }
+            }
+
+            function showPosition(position) {
+                x.innerHTML = "Latitude: " + position.coords.latitude + 
+                "<br>Longitude: " + position.coords.longitude;  
+            }
+        </script>
     </body>
 </html>
