@@ -177,9 +177,16 @@ body {
                     x.innerHTML = "Geolocation is not supported by this browser.";
                 }
             }
+
             function showPosition(position) {
                 x.innerHTML = "Latitude: " + position.coords.latitude + 
-                "<br>Longitude: " + position.coords.longitude;  
+                "<br>Longitude: " + position.coords.longitude +
+                "<br>Nearby users: DracoBiblio";  
+            }
+
+            function showSaved() {
+                // show saved tracks
+                document.getElementById("spotify").style.display = 'block';
             }
           </script>
         </div>
@@ -192,7 +199,7 @@ body {
                 <p align="center" class="lead">This app demonstrates how to get the saved tracks for a user</p>
                 <div id="search-form" class="form-inline">
                     <div align="center"><span class="xform-control">
-                      <button class="btn btn-info btn-large" id='go' type="button">Show My Saved Tracks</button>
+                      <button class="btn btn-info btn-large" id='go' type="button" onclick="showSaved()">Show My Saved Tracks</button>
                     </span>
                     </div>
                 </div>
@@ -200,6 +207,7 @@ body {
                </div>
             </div>
         </div>
+        <div id="spotify" style="display:none;">
         <div id="main" class="container">
             <h1 align="center"> Saved Tracks for <a href="https://play.spotify.com/user/1234702121">Megan Chen</a></h1>
             <div id="item-list" align="center">
@@ -222,6 +230,7 @@ body {
         <div id="main" class="container">
             <h1 align="center">Suggestions</h1>
             <div id="item-list" align="center">
+                <p>From <strong>DracoBiblio</strong></p>:
                 <ul>
                     <li>Who's on First (Abbott and Costello)</li>
                     <li>I Hate Crime (Mr. Kent, Private Investiation)</li>
@@ -229,6 +238,7 @@ body {
                     <li>Greetings and Introductions, Pt. 1 (Bitesize Irish Gaelic)</li>
                 </ul>
             </div>
+        </div>
         </div>
         <script>
         // Spotify API JS starter stuff
